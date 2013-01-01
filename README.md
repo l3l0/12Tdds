@@ -10,3 +10,4 @@ How to run specs?
 
         curl -s https://getcomposer.org/installer | php
         php composer.phar install --dev
+        php bin/phpspec run -fpretty
