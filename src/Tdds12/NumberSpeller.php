@@ -42,13 +42,13 @@ class NumberSpeller
         }
 
         if ($number < 100) {
-            return $this->spellOutHundredNumbers($number);
+            return $this->spellOutHundredNumber($number);
         }
 
         return $this->spellOutNumber($number);
     }
 
-    protected function spellOutHundredNumbers($number)
+    protected function spellOutHundredNumber($number)
     {
         $numberArray = $this->convertNumberToArray($number);
 
@@ -68,7 +68,7 @@ class NumberSpeller
         $prefix = sprintf(
             '%s %s',
             $this->spellOut($this->convertArrayToNumber($numberArray, 0, $size)),
-            $this->getType($number)
+            $this->getPrefix($number)
         );
 
         $restOfNumber = $this->convertArrayToNumber($numberArray, $size + 1, $numberCount - 1);
@@ -93,7 +93,7 @@ class NumberSpeller
         return $prefix;
     }
 
-    protected function getType($number)
+    protected function getPrefix($number)
     {
         if ($number < 1000) {
             return 'hundred';
