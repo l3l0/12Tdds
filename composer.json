@@ -1,4 +1,7 @@
 {
+    "require": {
+        "symfony/console": "2.1.*"
+    },
     "require-dev": {
         "phpspec/phpspec2": "*"
     },
